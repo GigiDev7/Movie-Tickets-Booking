@@ -1,0 +1,126 @@
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: #fff;
+    --secondary-color: #242333;
+    --third-color: #444451;
+    --fourth-color: #6feaf6;
+}
+
+.light-theme{
+    --primary-color: #000;
+    --secondary-color: rgb(230, 223, 223);
+    --third-color:  #a4a4ac;
+    --fourth-color: #0a8f96;
+}
+
+body{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+select{
+    background-color: #fff;
+    border: 0;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 5px 15px;
+    margin-left: 10px;
+}
+
+.container{
+    perspective: 1000px;
+}
+
+.row{
+    display: flex;
+}
+
+.screen{
+    background-color: var(--primary-color);
+    height: 80px;
+    width: 100%;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.8);
+    transform: rotateX(-45deg);
+}
+
+.seat{
+    background-color: var(--third-color);
+    height: 12px;
+    width: 15px;
+    margin: 3px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+}
+
+.seat:nth-of-type(2){
+    margin-right: 20px;
+}
+
+.seat:nth-last-of-type(2){
+    margin-left: 20px;
+}
+
+.seat.selected{
+    background-color: var(--fourth-color);
+}
+
+.seat.occupied{
+    background-color: var(--primary-color);
+}
+
+.row .seat:not(.occupied):hover{
+    transform: scale(1.2);
+}
+
+.showcase{
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #777;
+    border-radius: 5px;
+    padding: 5px 10px;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.showcase li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+span{
+    color: var(--fourth-color);
+}
+
+.icon-dark{
+    position: absolute;
+    top: 8%;
+    right: 5%;
+}
+
+#icon-small{
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.posters{
+    background-image: url(img/avengers.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 50vh;
+    width: 250px;
+    position: absolute;
+    left: 15%;
+    filter: drop-shadow(2px 4px 8px #585858);
+}
